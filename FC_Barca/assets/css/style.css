@@ -26,9 +26,6 @@ html {
     padding-top: 12px;
 }
 
-.col {
-    /* padding: 0 8px; */
-}
 
 .col + .col {
     margin-left: 8px;
@@ -428,7 +425,7 @@ html {
 
 #content .content__slider {
     position: relative;
-    background-image: url(../img/fan.jpg);
+    background-image: url('../img/fan.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -677,7 +674,7 @@ html {
 /* Partners */
 .team__partners {
     position: relative;
-    background-image: url(../img/partner.jpg);
+    background-image: url('../img/partner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
