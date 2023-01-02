@@ -1,0 +1,917 @@
+:root {
+    --header__main__height : 120px;
+    --header__logo__width: 324px;
+    --header__media__height : 48px;
+    --header__serivce__item__width : 190px;
+    --header__navbar__height : 48px;
+    --partners__height : 340px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Open Sans", sans-serif;
+}
+
+.row {
+    display: flex;
+    margin: 0 -8px;
+}
+
+.row + .row {
+    padding-top: 12px;
+}
+
+.col {
+    /* padding: 0 8px; */
+}
+
+.col + .col {
+    margin-left: 8px;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-4 {
+    width: calc(100%/3);
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+#header .header__main {
+    height: var(--header__main__height);
+    display: flex;
+    width: 100%;
+}
+
+.header__main .header__logo {
+    background-color: #0A0927;
+    color: #fff;
+    line-height: var(--header__main__height);
+    width: var(--header__logo__width);
+    padding: 0 24px;
+    border-right: 1px solid #29283d;
+    cursor: pointer;
+}
+
+
+.header__main .header__logo img {
+    width: 40px;
+    height: 40px;
+    transform: translateY(8px);
+}
+
+.header__main .header__logo h2 {
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 4px;
+    text-transform: uppercase;
+
+}
+
+.header__main .header__choice {
+    width: calc(100% - var(--header__logo__width));
+}
+
+.header__choice .header__media {
+    background-color: #0a0927;
+    height: var(--header__media__height);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #29283d;
+}
+
+.header__media .media__social {
+    color: #ffffff99;
+    display: flex;
+    margin-left: 16px;
+    line-height: var(--header__media__height);
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.header__media .media__social .media__social__item {
+    margin-left: 24px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.media__social .media__social__item:hover {
+    color: #fff;
+}
+
+.header__media .media__fan {
+    display: flex;
+    color: #fff;
+}
+
+.header__media .media__fan .media__fan__item {
+    margin-left: 16px;
+    line-height: var(--header__media__height);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.media__fan .fan__register {
+    background: linear-gradient(90deg,#8c1a17,#cd122d);
+    color: #fff;
+    margin: 8px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.media__fan .fan__register img {
+    transform: translateY(6px);
+    margin-left: 8px;
+}
+
+.media__fan .fan__register strong {
+    padding: 4px 0;
+    padding-right: 8px;
+    font-size: 12px;
+}
+
+.media__fan .fan__language {
+    padding-right: 20px;
+    border-right: 1px solid #29283d;
+}
+
+.media__fan .fan__language i {
+    font-size: 10px;
+    transform: translateY(-4px);
+}
+
+.media__fan .fan__site {
+    margin-right: 16px;
+}
+
+.media__fan .fan__site img {
+    margin-left: 4px;
+    transform: translateY(4px);
+}
+
+/* Header Service */
+.header__choice .header__service {
+    height: calc(var(--header__main__height) - var(--header__media__height));
+    width: 100%;
+    background-color: #181733;
+    color: #fff;
+    display: flex;
+}
+
+.header__choice .header__service .service__item {
+    min-width: var(--header__serivce__item__width);
+    text-align: center;
+    line-height: calc(var(--header__main__height) - var(--header__media__height));
+    border-right: 1px solid #29283d;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+.header__choice .header__service .service__item:first-child {
+    cursor: context-menu;
+}
+
+.header__service .service__item--active {
+    border-bottom: 8px solid #fdc52c;
+}
+
+
+/* Start: Tickets & Museums */
+.header__service .service__tickets:hover .tickets__subitem,
+.header__service .service__club__barca:hover .service__club {
+    display: flex;
+}
+
+.service__item .tickets__subitem,
+.header__service .service__club__barca .service__club {
+    position: absolute;
+    display: none;
+    left: -40%;
+    top: calc(100% - 8px);
+    width: 180%;
+    background-color: #154284;
+    text-transform: none;
+    z-index: 10;
+    line-height: normal;
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform 0.2s ease;
+    font-weight: 700;
+}
+
+.service__item .tickets__subitem::before,
+.service__item .service__TV__list::before,
+.header__service .service__club__barca .service__club::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    right: 0.2rem;
+    border: 0.6rem solid #154284;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    filter: drop-shadow(0 -0.1rem 0 rgba(0,0,0,.08));
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
+.service__item .tickets__subitem {
+    padding: 16px 0;
+}
+
+.service__item .tickets__subitem .ticket__list {
+    width: 50%;
+    list-style: none;
+}
+
+.tickets__subitem .ticket__list .ticket__item {
+    font-size: 13px;
+    margin: 0 16px 16px;
+    min-width: 200px;
+ }
+
+ .tickets__subitem .ticket__list .ticket__item:last-child {
+    margin-bottom: 0;
+ }
+
+.service__item .tickets__subitem .ticket__list:first-child {
+    border-right: 1px solid #2b5490;
+}
+
+/* END : Tickets & Museums */
+
+/* Start : Barca TV+ */
+.header__service .service__TV .service__TV__list {
+    position: absolute;
+    display: none;
+    top: calc(100% - 8px);
+    width: calc(100% + 16px);
+    left: -8px;
+    background-color: #154284;
+    list-style: none;
+    line-height: normal;
+    text-align: left;
+    text-transform: none;
+    padding: 0 16px;
+    z-index: 12;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.header__service .service__TV:hover .service__TV__list {
+    display: block;
+}
+
+.service__TV .service__TV__list .service__TV__item {
+    padding: 12px 0;
+    font-size: 12px;
+}
+/* END : Barca TV+ */
+
+/* Start: Club */
+.header__service .service__club__barca .service__club {
+    top: calc(100% - 8px);
+    width: calc(200% + 48px);
+    left: calc(-50% - 24px);
+    padding: 16px 0;
+}
+
+.service__club__barca .service__club .service__club__list {
+    width: 50%;
+    font-size: 12px;
+    list-style: none;
+    
+}
+
+.service__club__barca .service__club .service__club__list:first-child {
+    border-right: 1px solid #2b5490;
+}
+
+.service__club__barca .service__club .service__club__list li {
+    margin: 0 16px 16px;
+    min-width: 300px;
+}
+
+.service__club__barca .service__club .service__club__list li:last-child {
+    margin-bottom: 0;
+}
+/* END : Club */
+.header__service .service__item i {
+    transform: translateY(-4px);
+    font-size: 10px;
+}
+
+.header__choice .header__service .service__search {
+    width: calc(100% - var(--header__serivce__item__width)*6);
+    line-height: calc(var(--header__main__height) - var(--header__media__height));
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Start: Barca Team */
+
+.header__choice .header__service .service__team {
+    position: static;
+}
+
+.header__service .service__team:hover .service__barca__team {
+    display: flex;
+}
+
+.header__service .service__team .service__barca__team {
+    display: none;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: var(--header__main__height);
+    left: 0;
+    height: auto;
+    background-color: #0a0927;
+    padding: 36px 24px;
+    margin: 0 auto;
+    min-width: 80%;
+    z-index: 12;;
+    line-height: normal;
+    text-align: left;
+    text-transform: none;
+}
+
+.service__team .service__barca__team .barca__team__tittle {
+    color: #fdc52c;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 52px;
+}
+
+.service__team .service__barca__team .barca__team {
+    padding: 0 36px;
+
+}
+.service__team .service__barca__team .barca__team p {
+    font-size: 13px;
+}
+
+.service__team .service__barca__team .barca__team:last-child {
+    border-left: 1px solid #29283d;
+}
+
+.service__barca__team .barca__team .barca__team__heading {
+    color: #fdc52c;
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.service__team .service__barca__team .barca__team ul {
+    list-style: none;
+}
+
+.service__team .service__barca__team .barca__team li {
+    margin-top: 12px;
+    font-size: 13px;
+}
+/* END: Barca Team */
+
+
+/* Header navbar */
+#header .header__navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: var(--header__navbar__height);
+    list-style: none;
+    line-height: var(--header__navbar__height);
+    padding-left: 12%;
+    color: #fff;
+    font-size: 13px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: linear-gradient(90deg, #cd122d 0, #154284);
+    z-index: 8;
+}
+
+#header .header__navbar li {
+    margin: 0 16px;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+#header .header__navbar li:hover {
+    border-bottom: 6px solid #fff;
+}
+
+.header__navbar .navbar--active {
+    border-bottom: 6px solid #fdc52c;
+}
+
+/* Content */
+
+#content .content__slider {
+    position: relative;
+    background-image: url(../img/fan.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 150px;
+}
+
+
+#content .content__slider::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(0deg,#181733 0,rgba(24,23,51,.45) 70%,rgba(24,23,51,0));
+}
+
+#content .content__slider img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #000;
+    opacity: 0.2;
+}
+
+.content__slider .slider__layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0A0927;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.content__slider h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fdc52c;
+    font-size: 52px;
+    font-weight: 800;
+    z-index: 3;
+}
+
+/* Content team */
+
+#content .content__clb {
+    background-color: #181733;
+}
+
+#content .content__clb .content__team {
+    margin: 0 16px;
+    background-color: #fff;
+    border-radius: 16px 16px 0 0;
+}
+
+.content__team .team__desc {
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content__team .team__desc > h3 {
+    color: #222;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.content__team .team__desc__media {
+    display: flex;
+    align-items: center;
+}
+
+.content__team .team__desc__media h3 {
+    color: #737373B3;
+    font-size: 10px;
+    padding-right: 16px;
+    margin: 16px;
+    border-right: 1px solid #737373B3;
+    text-transform: uppercase;
+}
+
+.content__team .team__desc__media img {
+    height: 80px;
+    width: 80px;
+}
+
+.content__team .team__role__list {
+    padding-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.content__team .team__role__list .team__role__item {
+    color: #222;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-left: 8px;
+    padding: 8px 16px;
+    background-color: #F8F8F8;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+}
+
+.team__role__list .team__role__item:hover {
+    background-color: #154284;
+    color: #fff;
+}
+
+
+/* Team list */
+.content__team .team__list {
+    padding: 0 36px;
+}
+
+.content__team .team__item {
+    padding: 38px 0px 26px;
+}
+
+.content__team .team__item h1 {
+    padding-bottom: 34px;
+    text-align: center;
+    color: #742956;
+    font-weight: 800;
+}
+
+.content__team .team__item img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.content__team .team__coach {
+    margin-top: 12px;
+}
+
+.team__coach .team__coach__item {
+    display: flex;
+    margin: 4px -8px 0;
+}
+
+.team__coach .team__coach__item span {
+    width: 50%;
+    text-align: center;
+    padding: 12px;
+    background-color: #f3f3f3;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.team__coach .team__coach__item span:first-child {
+    font-weight: 700; 
+    background-color: #EDEDED;
+    color: #222222;
+}
+
+/* Team awards */
+
+.content__award {
+    padding: 0 16px;
+}
+.team__award {
+    background-color: #111025;
+    width: 100%;
+    height: 180px;
+    border-radius: 0 0 16px 16px;
+    border: 1px solid #262b47;
+    padding: 0 16px;
+}
+
+.team__award__list {
+    margin: 40px 0;
+}
+
+.team__award__item {
+    position: relative;
+    background-image: url(../img/horizontal-flash.jpg);
+    height: 100px;
+    margin: 0 8px;
+    
+}
+
+.award__item__content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    height: 20px;
+    background-color: #000;
+    font-weight: 800;
+}
+
+.award__item__content img {
+    width: 100px;
+    height: 60px;
+    transform: translate(-15px,-20px);
+}
+
+.award__item__content .award__item__amount {
+    font-size: 62px;
+    color: #fdc52c;
+    transform: translate(-25px,-34px);
+}
+
+.award__item__content .award__item__title,
+.award__item__content .award__item__trophie {
+    font-size: 10px;
+    line-height: 20px;
+}
+
+
+.award__item__content .award__item__trophie {
+    text-transform: uppercase;
+    transform: translateX(-16px);
+}
+
+.award__item__laliga .award__item__amount {
+    transform: translate(-36px,-34px);
+}
+
+.award__item__laliga .award__item__trophie {
+    transform: translateX(-24px);
+}
+
+.award__item__fifa .award__item__amount {
+    transform: translate(-42px,-34px);
+}
+
+.award__item__fifa .award__item__trophie {
+    transform: translateX(-30px);
+}
+
+
+/* Partners */
+.team__partners {
+    position: relative;
+    background-image: url(../img/partner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: var(--partners__height);
+}
+
+.team__partners h1 {
+    padding: 40px 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.team__partners__media {
+    padding: 32px 0 24px;
+}
+
+.team__partners__media p {
+    text-transform: uppercase;
+    color: #fdc52c;
+    font-weight: 800;
+    font-size: 12px;
+    margin: 0 16px 16px;
+}
+
+.team__partners__logo {
+    margin: 0 16px;
+    border-left: 4px solid #fdc52c;
+    display: flex;
+    justify-content: space-around;
+    height: 130px;
+}
+
+.partners__logo__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.partners__logo__item:hover {
+    border-bottom: 4px solid #fdc52c;
+}
+
+.partners__logo__item img {
+    width: 175px;
+    height: 100%;
+    object-fit: 1;
+}
+
+.partners__logo__item span {
+    color: #fff;
+    font-weight: 800;
+    font-size: 42px;
+    transform: translateX(-26px);
+}
+
+
+/* Footer */
+#footer {
+    padding: 0 16px;
+    background-color: #181733;
+}
+
+.footer__title {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 32px 0 0;
+}
+
+.footer__social {
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__social__media {
+    margin: 4px;
+    padding: 12px;
+    color: #fff;
+    min-width: 135px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.footer__social__media:hover {
+    border: 2px solid #fff;
+}
+
+.footer__social__fb {
+    background-color: #3B5998;
+}
+.footer__social__twitter {
+    background-color: #55ACEE;
+}
+.footer__social__spotify {
+    background-color: #00D365;
+    color: #000;
+}
+.footer__social__youtube {
+    background-color: #BB0000;
+}
+.footer__social__instagram {
+    background: radial-gradient(circle farthest-corner at 35% 90%,#fec564,transparent 50%),radial-gradient(circle farthest-corner at 0 140%,#fec564,transparent 50%),radial-gradient(ellipse farthest-corner at 0 -25%,#5258cf,transparent 50%),radial-gradient(ellipse farthest-corner at 20% -50%,#5258cf,transparent 50%),radial-gradient(ellipse farthest-corner at 100% 0,#893dc2,transparent 50%),radial-gradient(ellipse farthest-corner at 60% -20%,#893dc2,transparent 50%),radial-gradient(ellipse farthest-corner at 100% 100%,#d9317a,transparent),linear-gradient(#6559ca,#bc318f 30%,#e33f5f 50%,#f77638 70%,#fec66d);
+}
+.footer__social__onefootball {
+    background-color: #efefef;
+    color: #000;
+}
+.footer__social__tiktok {
+    background-color: #000;
+}
+
+.footer__social__media i {
+    font-size: 32px;
+    padding-bottom: 18px;
+}
+
+.footer__social__media .footer__media__name {
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.footer__social__media .footer__media__link {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* Footer Team */
+.footer__club {
+    padding-top: 94px;
+    display: flex;
+}
+
+.footer__team {
+    width: calc(100%/7);
+}
+
+.footer__team h1 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.footer__team__players {
+    list-style: none;
+    padding-top: 30px;
+}
+
+.footer__team__players li:hover a{
+    text-decoration: underline;
+}
+
+.footer__team__players li a{
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+    text-decoration: none;
+    color: #FFFFFFBF;
+}
+
+
+/* Footer Corporate */
+.footer__corporate {
+    padding: 56px 0 16px;
+}
+
+.footer__corporate__logo {
+    height: 32px;
+    margin-bottom: 24px;
+}
+
+.footer__corporate__logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.footer__corporate__logo span {
+    display: inline-block;
+    line-height: 32px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    transform: translateY(-8px);
+}
+
+.footer__corporate__link {
+    display: flex;
+}
+
+.footer__corporate__copyright,
+.footer__corporate__group {
+    width: 50%;
+}
+
+.footer__corporate__copyright p {
+    display: inline-block;
+    font-weight: 500;
+    color: #fff;
+    font-size: 13px;
+}
+
+.footer__corporate__copyright span {
+    color: #FFFFFFBF;
+    font-size: 12px;
+}
+
+.footer__corporate__group {
+    color: #fff;
+    list-style: none;
+    display: flex;
+    opacity: 0.8;
+}
+
+.footer__corporate__group li {
+    font-size: 12px;
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.footer__corporate__group li:hover {
+    text-decoration: underline;
+}
+
+.footer__corporate__group li + li {
+    border-left: 1px solid #fff;
+}
+
+/* Footer layout */
+.footer__layout {
+    margin: 0 -16px;
+    width: calc(100% + 32px);
+    height: 16px;
+    background: linear-gradient(90deg,#cd122d 0,#154284);
+}
