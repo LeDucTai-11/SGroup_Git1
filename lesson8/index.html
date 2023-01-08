@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>JavaScript CRUD Example Tutorial</h1> <br><hr>
+    <form action="" id="form">
+        <div class="form__input">
+            <div class="form__input__item">
+                <p>Full Name*</p>
+                <input type="text" id="fullName-input">
+            </div>
+            <div class="form__input__item">
+                <p>Email</p>
+                <input type="email" id="email-input">
+            </div>
+            <div class="form__input__item">
+                <p>Salary</p>
+                <input type="text" id="salary-input">
+            </div>
+            <div class="form__input__item">
+                <p>City</p>
+                <input type="text" id="city-input">
+            </div>
+
+            <div class="form__input__submit">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+
+    <div class="table">
+        <table id="users">
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
